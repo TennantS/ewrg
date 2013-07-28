@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ewrg_development
+  pool: 5
+  username: postgres
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: ewrg_test
+  pool: 5
+  username: postgres
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: ewrg_production
+  pool: 5
+  username: ewrg
+  password:
