@@ -8,7 +8,7 @@ describe "Products" do
       fill_in "product_name", with: "Some Fake Name"
       fill_in "product_description", with: "Some Fake Description"
       fill_in "product_part_number", with: "Some Fake Part Number"
-      click_button "Create Product"
+      expect { click_button("Create Product") }.to change(Product, :count).by(1)
       page.should have_content "Some Fake Name"
       page.should have_content "Product was created successfully"
     end
@@ -28,11 +28,13 @@ describe "Products" do
 
   describe "Destroying an existing product" do
     let!(:product) { FactoryGirl.create(:product) }
+
     it "should delete the product" do
       visit edit_product_path(product)
-      click_link "Delete Product"
+      expect { click_link("Delete Product") }.to change(Product, :count).by(-1)
       page.should have_content "Product was deleted successfully"
     end
+
   end
 
   describe "Visiting the all products page" do

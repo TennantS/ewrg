@@ -14,7 +14,7 @@ describe User do
   end
 
   describe "should be related to other classes" do
-
+    #nothing here yet
   end
 
   describe "should only allow valid attributes" do

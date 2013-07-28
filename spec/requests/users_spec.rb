@@ -7,7 +7,7 @@ describe "Users" do
       fill_in "user_email", with: "some@email.com"
       fill_in "user_password", with: "password"
       fill_in "user_password_confirmation", with: "password"
-      click_button "Create User"
+      expect { click_button("Create User") }.to change(User, :count).by(1)
     end
   end
 end
