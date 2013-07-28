@@ -1,0 +1,5 @@
+<ul class="nav pull-right">
+  <li><%= link_to "Signup", signup_path unless signed_in? %></li>
+  <li><%= link_to "Sign In", signin_path unless signed_in? %></li>
+  <li><%= link_to "Signout", signout_path, method: "delete" if signed_in? %></li>
+</ul>

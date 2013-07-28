@@ -1,0 +1,13 @@
+<ul class="nav pull-right">
+  <li class="dropdown">   
+    <%= link_to "#", data: { toggle: "dropdown" }, class: "dropdown-toggle" do %>
+      <span><%= "Logged in as #{current_user.email}" %></span>
+      <b class="caret"></b>
+    <% end %>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+      <li><%= link_to "My profile", current_user %></li>
+      <li><%= link_to "Edit my profile", edit_user_path(current_user) %></li>
+    </ul>
+  </li>
+</ul>

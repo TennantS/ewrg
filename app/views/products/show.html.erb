@@ -1,0 +1,7 @@
+<h1><%= @product.name %></h1>
+<h3>Part Number <small class="muted"><%= @product.part_number %></small></h3>
+
+<p><%= @product.description %></p>
+
+<%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-primary"  %>
+<%= link_to "All Products", products_path, class: "btn btn-primary"  %>

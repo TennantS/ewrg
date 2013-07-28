@@ -18,13 +18,13 @@ describe User do
   end
 
   describe "should only allow valid attributes" do
+    before { user.updating_password = true } #fix for conditional validation
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:password) }
     it { should validate_presence_of(:password_confirmation) }
 
     it { should validate_uniqueness_of(:email) }
 
-    it { should ensure_length_of(:username).is_at_most(50)}
     it { should ensure_length_of(:password).is_at_least(6)}
 
     it { should allow_value("a@b.com").for(:email) }
@@ -48,10 +48,6 @@ describe User do
     
     it "should save with a remember_token" do
       user.reload.remember_token.should_not be_nil
-    end
-
-    it "should save with an activation_token" do
-      user.reload.activation_token.should_not be_nil
     end
   end
 

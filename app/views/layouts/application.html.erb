@@ -12,6 +12,14 @@
   <div class="container">
     <div class="row">
       <div class="span12">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <%= link_to "EWRG", root_path, class: "brand" %>
+            <%= render 'layouts/nav_session_links' %>
+            <%= render 'layouts/nav_current_user' if signed_in? %>
+            <%= render 'layouts/nav_pages' %>
+          </div>
+        </div>
         <%= render 'layouts/flash_messages' %>
         <%= yield %>
       </div>
